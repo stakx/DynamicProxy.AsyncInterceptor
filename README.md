@@ -75,3 +75,4 @@ var proxy = generator.CreateInterfaceProxyWithoutTarget<ICalculator>(
 
 Assert.Equal(42, proxy.GetResult());
 Assert.Equal(42, await proxy.GetResultAsync());
+```
