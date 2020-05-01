@@ -20,18 +20,21 @@ class Delay : AsyncInterceptor
         this.milliseconds = milliseconds;
     }
 
+    // This gets called when a non-awaitable method is intercepted:
     protected override void Intercept(IInvocation invocation)
     {
         Thread.Sleep(this.milliseconds);
         invocation.Proceed();
     }
 
+    // Or this gets called when an awaitable method is intercepted:
     protected override async ValueTask InterceptAsync(IAsyncInvocation invocation)
     {
         await Task.Delay(this.milliseconds);
         await invocation.ProceedAsync();
     }
 }
+
 
 class SetReturnValue : AsyncInterceptor
 {
@@ -49,16 +52,20 @@ class SetReturnValue : AsyncInterceptor
 
     protected override ValueTask InterceptAsync(IAsyncInvocation invocation)
     {
+        // The property being set is called `Result` rather than `ReturnValue`.
+        // This is a hint that its value doesn't have to be wrapped up as a task-like object:
         invocation.Result = this.returnValue;
         return default;
     }
 }
+
 
 public interface ICalculator
 {
     int GetResult();
     Task<int> GetResultAsync();
 }
+
 
 var generator = new ProxyGenerator();
 
