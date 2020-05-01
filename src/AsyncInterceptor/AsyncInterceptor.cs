@@ -1,12 +1,14 @@
 // Copyright (c) 2020 stakx
 // License available at https://github.com/stakx/AsyncInterceptor/blob/master/LICENSE.md.
 
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
 namespace Castle.DynamicProxy.Contrib
 {
     public abstract partial class AsyncInterceptor : IInterceptor
     {
+        [AsyncStateMachine(typeof(AsyncStateMachine))]
         void IInterceptor.Intercept(IInvocation invocation)
         {
             var returnType = invocation.Method.ReturnType;
