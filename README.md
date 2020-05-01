@@ -6,6 +6,7 @@ This is currently in draft stage.
 
 
 ![.NET Core](https://github.com/stakx/AsyncInterceptor/workflows/.NET%20Core/badge.svg?branch=master)
+[![Nuget](https://img.shields.io/nuget/vpre/stakx.DynamicProxy.AsyncInterceptor?color=fa0&label=NuGet)](https://nuget.org/packages/stakx.DynamicProxy.AsyncInterceptor)
 
 
 ## Usage example
