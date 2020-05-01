@@ -32,8 +32,8 @@ namespace Castle.DynamicProxy.Contrib
                 var previousReturnValue = this.invocation.ReturnValue;
                 try
                 {
-                    proceed.Invoke();
-                    var returnValue = invocation.ReturnValue;
+                    this.proceed.Invoke();
+                    var returnValue = this.invocation.ReturnValue;
                     if (returnValue != previousReturnValue)
                     {
                         var awaiter = returnValue.GetAwaiter();
@@ -67,7 +67,7 @@ namespace Castle.DynamicProxy.Contrib
                 }
                 finally
                 {
-                    invocation.ReturnValue = previousReturnValue;
+                    this.invocation.ReturnValue = previousReturnValue;
                 }
             }
         }
