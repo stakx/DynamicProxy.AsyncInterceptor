@@ -10,7 +10,6 @@ namespace stakx.DynamicProxy
 {
     public abstract partial class AsyncInterceptor : IInterceptor
     {
-        [AsyncStateMachine(typeof(AsyncStateMachine))]
         void IInterceptor.Intercept(IInvocation invocation)
         {
             var returnType = invocation.Method.ReturnType;
