@@ -5,6 +5,9 @@ This small library provides an abstract base class `AsyncInterceptor` for Castle
 This is currently in draft stage.
 
 
+![.NET Core](https://github.com/stakx/AsyncInterceptor/workflows/.NET%20Core/badge.svg?branch=master)
+
+
 ## Usage example
 
 ```csharp
