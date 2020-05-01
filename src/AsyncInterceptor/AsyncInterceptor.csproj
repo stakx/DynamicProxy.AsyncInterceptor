@@ -3,8 +3,26 @@
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>stakx.DynamicProxy.AsyncInterceptor</AssemblyName>
     <RootNamespace>stakx.DynamicProxy</RootNamespace>
     <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Authors>stakx</Authors>
+    <Description>Provides an abstract base class `AsyncInterceptor` for Castle DynamicProxy that enables the use of `async`/`await` during interception of awaitable methods.</Description>
+    <IncludeSymbols>True</IncludeSymbols>
+    <IsPackable>True</IsPackable>
+    <NoPackageAnalysis>True</NoPackageAnalysis>
+    <PackageId>stakx.DynamicProxy.AsyncInterceptor</PackageId>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/stakx/DynamicProxy.AsyncInterceptor</PackageProjectUrl>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+    <PackageTags>castle;castle-core;castle-dynamicproxy;dynamicproxy;async;async-await;async-interceptor;interceptor;awaitable</PackageTags>
+    <PackageVersion>0.1.0</PackageVersion>
+    <RepositoryUrl>https://github.com/stakx/DynamicProxy.AsyncInterceptor.git</RepositoryUrl>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <Title>AsyncInterceptor for Castle DynamicProxy</Title>
   </PropertyGroup>
 
   <ItemGroup>
