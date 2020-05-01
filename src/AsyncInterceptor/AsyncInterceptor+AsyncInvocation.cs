@@ -39,8 +39,15 @@ namespace Castle.DynamicProxy.Contrib
                         var awaiter = returnValue.GetAwaiter();
                         if (awaiter.IsCompleted())
                         {
-                            this.Result = awaiter.GetResult();
-                            return default;
+                            try
+                            {
+                                this.Result = awaiter.GetResult();
+                                return default;
+                            }
+                            catch (Exception exception)
+                            {
+                                return new ValueTask(Task.FromException(exception));
+                            }
                         }
                         else
                         {
