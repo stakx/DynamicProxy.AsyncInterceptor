@@ -1,4 +1,4 @@
-# AsyncInterceptor
+# AsyncInterceptor for Castle DynamicProxy
 
 This small library provides an abstract base class `AsyncInterceptor` for Castle DynamicProxy which allows you to use .NET languages' `async`/`await` facilities during interception of `await`-able methods.
 
@@ -36,25 +36,25 @@ class Delay : AsyncInterceptor
 }
 
 
-class SetReturnValue : AsyncInterceptor
+class Return : AsyncInterceptor
 {
-    private readonly object returnValue;
+    private readonly object value;
 
-    public SetReturnValue(object  returnValue)
+    public Return(object value)
     {
-        this.returnValue = returnValue;
+        this.value = value;
     }
 
     protected override void Intercept(IInvocation invocation)
     {
-        invocation.ReturnValue = this.returnValue;
+        invocation.ReturnValue = this.value;
     }
 
     protected override ValueTask InterceptAsync(IAsyncInvocation invocation)
     {
         // The property being set is called `Result` rather than `ReturnValue`.
         // This is a hint that its value doesn't have to be wrapped up as a task-like object:
-        invocation.Result = this.returnValue;
+        invocation.Result = this.value;
         return default;
     }
 }
@@ -71,7 +71,7 @@ var generator = new ProxyGenerator();
 
 var proxy = generator.CreateInterfaceProxyWithoutTarget<ICalculator>(
     new Delay(2500),
-    new SetReturnValue(42));
+    new Return(42));
 
 Assert.Equal(42, proxy.GetResult());
 Assert.Equal(42, await proxy.GetResultAsync());
