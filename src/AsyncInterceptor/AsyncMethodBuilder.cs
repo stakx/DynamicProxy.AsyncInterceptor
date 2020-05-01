@@ -2,6 +2,7 @@
 // License available at https://github.com/stakx/AsyncInterceptor/blob/master/LICENSE.md.
 
 using System;
+using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
@@ -30,7 +31,16 @@ namespace Castle.DynamicProxy.Contrib
             var asyncMethodBuilderAttribute = (AsyncMethodBuilderAttribute)Attribute.GetCustomAttribute(returnType, typeof(AsyncMethodBuilderAttribute), inherit: false);
             if (asyncMethodBuilderAttribute != null)
             {
-                return asyncMethodBuilderAttribute.BuilderType;
+                var builderType = asyncMethodBuilderAttribute.BuilderType;
+                if (builderType.IsGenericTypeDefinition)
+                {
+                    Debug.Assert(returnType.IsConstructedGenericType);
+                    return builderType.MakeGenericType(returnType.GetGenericArguments());
+                }
+                else
+                {
+                    return builderType;
+                }
             }
             else if (returnType == typeof(ValueTask))
             {
