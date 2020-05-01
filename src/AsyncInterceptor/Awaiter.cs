@@ -4,7 +4,7 @@
 using System;
 using System.Reflection;
 
-namespace Castle.DynamicProxy.Contrib
+namespace stakx.DynamicProxy
 {
     internal static class Awaiter
     {

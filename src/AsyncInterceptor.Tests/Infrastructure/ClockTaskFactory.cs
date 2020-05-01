@@ -5,7 +5,7 @@ using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
-namespace Castle.DynamicProxy.Contrib.Tests
+namespace stakx.DynamicProxy.Tests
 {
     // Based on Jon Skeet's `TimeMachine` class described in:
     // https://codeblog.jonskeet.uk/2011/11/25/eduasync-part-17-unit-testing/

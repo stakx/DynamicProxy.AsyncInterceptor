@@ -3,7 +3,9 @@
 
 using System.Threading.Tasks;
 
-namespace Castle.DynamicProxy.Contrib.Tests
+using Castle.DynamicProxy;
+
+namespace stakx.DynamicProxy.Tests
 {
     public sealed class Return : AsyncInterceptor
     {

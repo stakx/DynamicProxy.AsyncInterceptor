@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Threading.Tasks;
 
-namespace Castle.DynamicProxy.Contrib
+using Castle.DynamicProxy;
+
+namespace stakx.DynamicProxy
 {
     partial class AsyncInterceptor
     {

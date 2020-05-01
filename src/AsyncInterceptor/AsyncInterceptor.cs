@@ -4,7 +4,9 @@
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
-namespace Castle.DynamicProxy.Contrib
+using Castle.DynamicProxy;
+
+namespace stakx.DynamicProxy
 {
     public abstract partial class AsyncInterceptor : IInterceptor
     {

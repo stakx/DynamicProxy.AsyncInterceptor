@@ -1,7 +1,9 @@
 // Copyright (c) 2020 stakx
 // License available at https://github.com/stakx/AsyncInterceptor/blob/master/LICENSE.md.
 
-namespace Castle.DynamicProxy.Contrib.Tests
+using Castle.DynamicProxy;
+
+namespace stakx.DynamicProxy.Tests
 {
     public abstract class ClockBasedTextFixture
     {

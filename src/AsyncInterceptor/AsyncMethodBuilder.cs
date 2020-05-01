@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
-namespace Castle.DynamicProxy.Contrib
+namespace stakx.DynamicProxy
 {
     internal static class AsyncMethodBuilder
     {

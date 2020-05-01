@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <RootNamespace>Castle.DynamicProxy.Contrib.Tests</RootNamespace>
+    <RootNamespace>stakx.DynamicProxy.Tests</RootNamespace>
     <IsPackable>false</IsPackable>
     <LangVersion>7.1</LangVersion>
   </PropertyGroup>
