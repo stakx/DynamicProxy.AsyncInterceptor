@@ -1,6 +1,6 @@
 # AsyncInterceptor for Castle DynamicProxy
 
-This small library provides an abstract base class `AsyncInterceptor` for Castle DynamicProxy which allows you to use .NET languages' `async`/`await` facilities during interception of `await`-able methods.
+This small library provides an abstract base class `AsyncInterceptor` for [Castle DynamicProxy](https://github.com/castleproject/Core/blob/master/docs/dynamicproxy.md) which allows you to use .NET languages' `async`/`await` facilities during interception of `await`-able methods.
 
 This is currently in draft stage.
 
