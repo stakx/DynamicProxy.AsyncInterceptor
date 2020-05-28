@@ -1,5 +1,5 @@
 // Copyright (c) 2020 stakx
-// License available at https://github.com/stakx/AsyncInterceptor/blob/master/LICENSE.md.
+// License available at https://github.com/stakx/DynamicProxy.AsyncInterceptor/blob/master/LICENSE.md.
 
 using System;
 using System.Diagnostics;
